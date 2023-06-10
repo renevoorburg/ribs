@@ -1,6 +1,6 @@
 # RIBS - RDA Improved By Simplification
 
-Goals of RIBS is to make it easier to work with RDA (Resource Description and Access) metadata standard in an RDF based context.
+Goal of RIBS is to make it easier to work with RDA (Resource Description and Access) metadata standard in an RDF based context.
 
 This is done by
 
