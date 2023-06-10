@@ -3,6 +3,7 @@
 @prefix ns0: <http://purl.org/vocab/vann/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://registry.digitopia.nl/ribs#>
@@ -17,6 +18,8 @@
   dc11:issued "2023-06-10" ;
   owl:versionInfo "v0.0.1" ;
   dc11:modified "2023-06-10" .
+
+# Core Classes:
 
 <http://registry.digitopia.nl/ribs#Agent>
     a owl:Class ;
@@ -125,3 +128,56 @@
     rdfs:label "work"@en, "œuvre"@fr, "Obra"@es, "werk"@nl, "opera"@it, "Verk"@sv, "έργο"@el, "værk"@da, "tác phẩm"@vi, "Werk"@de, "obra"@ca, "mű"@hu, "teos"@fi, "verk"@no, "عمل"@ar, "teos"@et, "darbs"@lv ;
     skos:definition "A distinct intellectual or artistic creation, that is, the intellectual or artistic content."@en, "Création intellectuelle ou artistique déterminée, c’est-à-dire le contenu intellectuel ou artistique."@fr, "Una creación intelectual o artística distintiva, i.e., el contenido intelectual o artístico."@es, "Een onderscheidbare intellectuele of artistieke creatie, dit wil zeggen, de intellectuele of artistieke content."@nl, "Creazione intellettuale o artistica distinta, cioè il contenuto artistico o intellettuale."@it, "Μια διακριτή διανοητική/πνευματική ή καλλιτεχνική δημιουργία, δηλαδή το πνευματικό ή καλλιτεχνικό περιεχόμενο."@el, "Itsenäinen tiedollinen tai taiteellinen luomus eli tiedollinen tai taiteellinen sisältö."@fi, "Selvstændig intellektuel eller kunstnerisk frembringelse, fx det intellektuelle eller kunstneriske indhold."@da, "Một sáng tạo nghệ thuật hoặc trí tuệ riêng biệt, nghĩa là, nội dung nghệ thuật hoặc trí tuệ."@vi, "Eine individuelle intellektuelle oder künstlerische Schöpfung, das heißt der intellektuelle oder künstlerische Inhalt."@de, "Creació intel·lectual o artística distinta, és a dir, el contingut intel·lectual o artístic."@ca, "Önálló szellemi vagy művészi alkotás, azaz a szellemi vagy művészi tartalom."@hu, "Et distinkt intellektuell eller kunstnerisk arbeid (dvs. det intellektuelle eller kunstneriske innholdet)."@no, "ابداع فكري أو فني متميز، وما يمثل محتوى فكري أو فني ."@ar, "Piiritletud intellektuaalne või kunstilooming, s.o intellektuaalne või kunstiline sisu."@et, "Atšķirīgs intelektuālas vai mākslinieciskas jaunrades veikums (FRBR)."@lv .
 
+# Domain Entity:
+
+<http://registry.digitopia.nl/ribs#related>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50304> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has related RDA entity of  RDA entity "@en, "heeft gerelateerde RDA-entiteit van RDA-entiteit"@nl ;
+    skos:definition "Relates an RDA entity  to an RDA entity associated with it."@en, "Relateert een RDA-entiteit aan een RDA-entiteit die er meei geassocieerd wordt."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> .
+
+ <http://registry.digitopia.nl/ribs#relatedNomen>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50340> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    a rdf:Property ;
+    rdfs:label "has related nomen"@en, "heeft gerelateerde nomen"@nl;
+    skos:definition "Relates an entity to a nomen that is associated with it."@en, "Relateert een entiteit aan een nomen die er mee geassocieerd wordt."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Nomen>, rdfs:Literal .
+
+<http://registry.digitopia.nl/ribs#appellation>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50378> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has appellation"@en, "heeft benaming"@nl; 
+    skos:definition "Relates an enity to a nomen that is used within a given scheme or context to refer to an agent."@en, "Relateert een entiteit aan een nomen dat wordt gebruikt binnen een bepaald schema of context om een actor aan te duiden."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Nomen>, rdfs:Literal ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#relatedNomen> .
+ 
+<http://registry.digitopia.nl/ribs#accessPoint>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50373> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has access point"@en, "heeft ingang"@nl;
+    skos:definition "Relates an enity to a nomen that is an appellation of the entity in natural language that is taken from a vocabulary encoding scheme or is constructed using a string encoding scheme."@en, "Relateert een entitiet aan een nomen dat een benaming is van de entiteit in natuurlijke taal die ontleend is aan een vocabulair coderingsschema of gevormd is volgens een string coderingsschema."@nl; 
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Nomen>, rdfs:Literal ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#appellation> .
+
+# Domain Agent:
+
+<http://registry.digitopia.nl/ribs#abridgerOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50157> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is abridger agent of"@en, "est un agent abréviateur de"@fr, "είναι συντμητής φορέας του"@el, "er agent, som er forkorter af"@da, "és agent abreujador de"@ca, "ist Akteur als Kürzende/Kürzender von"@de, "kivonatoló ágense a következőnek:"@hu, "lyhentäjä (toimija) ekspressiossa"@fi, "er forkorter av (agent)"@no, "is inkorter-actor van"@nl, "هو وكيل مُلَخِّص لـ"@ar, "lühendaja (tegija) väljenduses"@et, "è abbreviatore agente di"@it, "ir saīsinātājs (aģents)"@lv ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent of shortening an expression of another work without changing the general meaning or manner of presentation."@en, "Met un agent en relation avec une expression qui intègre une contribution de la part d’un agent consistant à raccourcir une expression d’une autre œuvre sans en changer le sens général ou le mode de présentation."@fr, "Συνδέει έναν φορέα, ο οποίος συνεισφέρει σε μια έκφραση ενός έργου μέσω της σύντμησης ή συρρίκνωσης του πρωτότυπου έργου, αφήνοντας ωστόσο ουσιαστικά αμετάβλητα τη φύση και το περιεχόμενό του, με μια έκφραση."@el, "Setzt einen Akteur in Beziehung zu einer Expression, zu der ein Akteur beiträgt, indem er eine Expression eines anderen Werks kürzt, ohne die allgemeine Bedeutung oder Art der Darstellung zu verändern."@de, "Relaterer en agent til et udtryk, som omfatter en agents bidrag ved at forkorte udtrykket af et andet værk, uden at ændre den overordnede betydning eller præsentationsmåde."@da, "Relaciona un agent amb una expressió que inclou una contribució d’un agent escurçant una expressió d’una altra obra sense canviar-ne el significat general o la forma de presentació. "@ca, "Liittää toimijan ekspressioon, jonka tekemiseen toimija osallistuu lyhentämällä toisen teoksen ekspressiota muuttamatta esityksen yleistä sisältöä tai tyyliä."@fi, "Egy ágenst hozzákapcsol egy kifejezési formához, amely magában foglalja az ágens közreműködését egy másik mű kifejezési formájának lerövidítésével úgy, hogy a bemutatás általános jelentése vagy módja nem változik."@hu, "Relaterer en agent til et uttrykk som inkluderer et bidrag fra en agent i form av forkortelse av et uttrykk av et annet verk og lar særpreg og innhold forbli hovedsakelig uendret."@no, "Relateert een actor aan een expressie die omvat een bijdrage door een actor door inkorten van een expressie of ander werk zonder de algemene betekenis of manier van uiteenzetting te wijzigen."@nl, "يربط وكيلا بتعبيرة تتضمن إسهام وكيل في تلخيص تعبيرة لعمل آخر دون تغيير المعنى العام أو طريقة العرض."@ar, "Seostab tegija väljendusega, millesse tegija on andnud panuse, lühendades teise teose väljendust, muutmata üldist tähendust ja esitusviisi."@et, "Correla un agente a un'espressione che include un contributo da parte di un agente che riassume un'espressione o un'altra opera senza modificare il significato generale o la modalità di presentazione."@it, "Sasaista aģentu ar izteiksmi, kas ietver aģenta ieguldījumu, saīsinot cita darba izteiksmi, nemainot darba nozīmi vai pasniegšanas veidu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Expression> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#reviserOf> ;
+    rdfs:seeAlso <http://registry.digitopia.nl/ribs#authorOf> ;
+    skos:altLabel "abridger of"@en, "lyhentäjänä aineistossa (ekspressio)"@fi, "forkorter av "@no, "مُلَخِص"@ar, "abreujador de"@ca, "forkorter af"@da, "lühendaja väljenduses"@et, "kivonatolója a következőnek:"@hu, "abbreviatore di"@it, "συντμητής του"@el, "abréviateur de"@fr, "Kürzende/Kürzender von"@de .
