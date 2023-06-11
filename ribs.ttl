@@ -270,6 +270,16 @@
     rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
  
+<http://registry.digitopia.nl/ribs#contributorToAmalgamation>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50448>  ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is contributor agent to amalgamation of"@en ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent to a seamless mix of kinds of content."@en ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Expression> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#creatorOf>.
+
 <http://registry.digitopia.nl/ribs#contributorToPerformance>
     owl:sameAs <http://rdaregistry.info/Elements/a/P50449> ;
     rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
@@ -278,7 +288,7 @@
     a rdf:Property ;
     rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
     rdfs:range <http://registry.digitopia.nl/ribs#Expression> ;
-    rdfs:subPropertyOf <http://rdaregistry.info/Elements/a/P50448> . #### algemeen maken??
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAmalgamation> .
 
 <http://registry.digitopia.nl/ribs#performerOf>
     owl:sameAs <http://rdaregistry.info/Elements/a/P50147> ;
@@ -424,3 +434,26 @@
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#creatorOf> ;
     skos:altLabel "architect of"@en, "arkkitehtinä teoksessa"@fi, "arkitekt for"@no, "مهندس معماري"@ar, "arquitecte de"@ca, "arkitekt af"@da, "arhitekt teoses"@et, "építésze a következőnek:"@hu, "architetto di"@it, "αρχιτέκτων του"@el, "architecte de"@fr, "Architekt von"@de ;
     skos:scopeNote "Ένας σκηνοθέτης είναι ατομικά υπεύθυνος για τη σύλληψη και την εκτέλεση όλων των πτυχών μιας ταινίας."@el .
+
+<http://registry.digitopia.nl/ribs#arrangerOfMusicOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50137> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is arranger agent of music of"@en, "est un agent arrangeur de musique de"@fr, "είναι διασκευαστής φορέας της μουσικής του"@el, "er agent, som er musikarrangør af"@da, "és agent arranjador de música de"@ca, "ist Akteur als Arrangeurin/Arrangeur von"@de, "hangszerelő ágense a következőnek:"@hu, "sovittaja (toimija) ekspressiossa"@fi, "er arrangør av musikk for (agent)"@no, "is arrangeur-actor van muziek van"@nl, "هو وكيل موزع موسيقي لـ"@ar, "muusika seadja (tegija) väljenduses"@et, "è arrangiatore di musica agente di"@it, "ir aranžētājs (aģents)"@lv ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent of rewriting a musical composition for a medium of performance different from that for which the work was originally intended."@en, "Met un agent en relation avec une expression qui intègre une contribution de la part d’un agent consistant à réécrire une composition musicale pour une distribution d’exécution différente de celle à laquelle l’œuvre était destinée à l’origine."@fr, "Συνδέει έναν φορέα, ο οποίος συνεισφέρει σε μια έκφραση ενός μουσικού έργου μέσω της μεταγραφής της σύνθεσης για μέσο εκτέλεσης διαφορετικό από το πρωτότυπο, με μια έκφραση."@el, "Setzt einen Akteur in Beziehung zu einer Expression, zu der ein Akteur beiträgt, indem er eine Komposition für eine bestimmte Besetzung umschreibt, die sich von der Originalbesetzung unterscheidet, für die das Werk ursprünglich konzipiert war."@de, "Relaterer en agent til et udtryk, som omfatter en agents bidrag ved at omskrive en komposition til en anden besætning end den, værket oprindeligt var beregnet til."@da, "Relaciona un agent amb una expressió que inclou una contribució d’un agent de reescriure una composició musical per a un repartiment d’execució diferent d’aquell per al qual l’obra va ser concebuda originalment."@ca, "Liittää toimijan ekspressioon, jonka tekemiseen toimija osallistuu muokkaamalla sävellyksen alkuperäisteoksesta poikkeavalle esityskokoonpanolle."@fi, "Egy ágenst hozzákapcsol egy kifejezési formához, amely magában foglalja az ágens közreműködését zenei kompozíció  újraírásában, amikor az előadás médiuma különbözik attól, mint amelyre a művet eredetileg szánták."@hu, "Relaterer en agent til et uttrykk som inkludrerer et bidrag fra en agent i form av omskriving av en musikalsk komposisjon for en annen besetning enn verket opprinnelig var ment for."@no, "Relateert een actor aan een expressie die omvat een bijdrage door een actor door herschrijven van een muzikale compositie voor een uitvoeringsmedium anders dan waarvoor het werk oorspronkelijk bedoeld was."@nl, "يربط وكيلا بتعبيرة تتضمن إسهام وكيل في إعادة كتابة لحن موسيقي لوسيط أداء يختلف عن الوسيط الذي كان العمل مقررا له أصلاً."@ar, "Seostab tegija väljendusega, millesse tegija on andnud panuse, arranžeerides kompositsiooni esituskoosseisule, mis erineb sellest, millele teos oli algselt mõeldud."@et, "Correla un agente a un'espressione che include un contributo da parte di un agente nella riscrittura di una composizione musicale per uno strumento di esecuzione differente da quello per il quale l'opera era stata originariamente concepita."@it, "Sasaista aģentu ar izteiksmi, kas ietver aģenta ieguldījumu, pārrakstot mūzikas kompozīciju izpildījumam, kas atšķirīgs no tā, kas sākotnēji bija paredzēts."@lv ;
+    a rdf:Property ;
+    skos:scopeNote "An arranger of music may also modify the work for the same medium of performance, etc., keeping the musical substance of the original composition essentially unchanged."@en, "Un arrangeur de musique peut aussi modifier l’œuvre pour la même distribution d’exécution, etc. tout en gardant la substance musicale de la composition originale essentiellement inchangée."@fr, "Ένας διασκευαστής μουσικής μπορεί επίσης να τροποποιήσει το έργο για το ίδιο μέσο εκτέλεσης κ.λπ. τηρώντας τη μουσική ουσία της πρωτότυπης σύνθεσης ουσιαστικά αμετάβλητη. "@el, "Eine Arrangeurin/Ein Arrangeur kann das Werk auch für die gleiche Besetzung verändern und so weiter, solange die musikalische Substanz der Originalkomposition im Wesentlichen unverändert bleibt."@de, "En musikarrangør kan også modificere værket for samme besætning etc. og derved i alt væsentligt bevare den originale kompositions musikalske substans uændret."@da, "Sovittaja voi myös muokata teosta samalle esityskokoonpanolle tms. säilyttäen alkuperäisen sävellyksen musiikillisen sisällön olennaisilta osin muuttumattomana."@fi, "Egy hangszerelő módosíthatja a művet az előadás ugyanazon médiuma stb. számára is, amikor alapvetően változatlanul megtartja az eredeti kompozíció zenei lényegét."@hu, "En arrangør av musikk kan også gjøre endringer i verket for samme besetning etc., og beholde det musikalske innholdet av originalkomposisjonen hovedsaklig uendret."@no, "Een arrangeur van muziek kan het werk ook bewerken voor hetzelfde uitvoeringsmedium etc., waarbij de muzikale inhoud van de originele compositie in essentie onveranderd gehouden wordt."@nl, "قد يقوم موزع موسيقي أيضًا بتعديل العمل بما يلائم وسيط الأداء ذاته، الخ، مع الإبقاء على اللحن الأصلي دون تغيير جوهري."@ar, "Un arranjador de música també pot modificar l’obra per al mateix repartiment d’execució, etc., tot mantenint la substància musical de la composició original essencialment sense modificar."@ca, "Muusika seadja võib teose seada ka samale esituskoosseisule, muutmata olemuslikult algse kompositsiooni muusikalist sisu."@et, "Un arrangiatore di musica può anche modificare l'opera per lo stesso mezzo di esecuzione etc. mantenenendo essenzialmente immutata la sostanza musicale della composizione originale."@it, "Mūzikas aranžētājs var arī pārveidot darbu tam pašam izpildījumam, u. tml. saglabājot oriģinālās kompozīcijas muzikālo būtību nemainīgu."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Expression> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#reviserOf> ;
+    rdfs:seeAlso  <http://registry.digitopia.nl/ribs#creatoirOf>  ;
+    skos:altLabel "arranger of music of"@en, "sovittajana musiikissa"@fi, "arrangør av musikk for"@no, "موزع موسيقي"@ar, "arranjador de música de"@ca, "musikarrangør af"@da, "muusika seadja väljenduses"@et, "hangszerelője a következőnek:"@hu, "arrangiatore di musica di"@it, "διασκευαστής της μουσικής του"@el, "arrangeur de musique de"@fr, "Arrangeur von"@de .
+
+<http://registry.digitopia.nl/ribs#contributorToPerformanceOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50449> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is contributor agent to performance of"@en ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent to a performance."@en ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Expression> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAmalgamation> .
+
