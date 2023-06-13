@@ -236,6 +236,164 @@
     rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#subjectOf> .    
 
+# Domain Entity, generalized:
+
+<http://registry.digitopia.nl/ribs#related>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50304> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property, owl:SymmetricProperty ;
+    rdfs:label "has related RDA entity of RDA entity "@en, "heeft gerelateerde RDA-entiteit van RDA-entiteit"@nl ;
+    skos:definition "Relates an RDA entity to an RDA entity associated with it."@en, "Relateert een RDA-entiteit aan een RDA-entiteit die er meei geassocieerd wordt."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:comment "Would it be wise / handy to specify a range here? Is 'everything' an RDA entity? Mind this is a symmetric property."@en .
+
+<http://registry.digitopia.nl/ribs#relatedNomen>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50340> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    a rdf:Property ;
+    rdfs:label "has related nomen"@en, "heeft gerelateerde nomen"@nl;
+    skos:definition "Relates an entity to a nomen that is associated with it."@en, "Relateert een entiteit aan een nomen die er mee geassocieerd wordt."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:comment "In RIBS, an RDA Nomen can be represented as either a typed entity or an rdfs:Literal. For the latter case it is desirable to have a property that explicitly refers to what type of object it relates to, as is defined here"@en .
+
+<http://registry.digitopia.nl/ribs#relatedTimespan>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50339> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    a rdf:Property ;
+    rdfs:label "has related timespan"@en, "heeft gerelateerde periode"@nl;
+    skos:definition "Relates an entity to a timespan that is associated with it."@en, "Relateert een entiteit aan een periode die er mee geassocieerd wordt."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Timespan> rdfs:Literal) 
+     ] ;
+    rdfs:comment "In RIBS, an RDA Timespan can be represented as either a typed entity or an rdfs:Literal. For the latter case it is desirable to have a property that explicitly refers to what type of object it relates to, as is defined here."@en .
+
+<http://registry.digitopia.nl/ribs#appellation>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50378> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has appellation"@en, "heeft benaming"@nl; 
+    skos:definition "Relates an enity to a nomen that is used within a given scheme or context to refer to an agent."@en, "Relateert een entiteit aan een nomen dat wordt gebruikt binnen een bepaald schema of context om een actor aan te duiden."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#relatedNomen> .
+ 
+<http://registry.digitopia.nl/ribs#name>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50385> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has name of agent"@en, "toimijan nimi"@fi, "har navn på agent "@no, "heeft naam van actor"@nl, "له اسم لوكيل"@ar, "té com a nom d’agent"@ca, "har navn på agent"@da, "tegija nimi"@et, "hat Namen eines Akteurs"@de, "ágens neve a következő:"@hu, "έχει όνομα του φορέα"@el, "a pour nom d’agent"@fr, "aģenta vārds/nosaukums"@lv ;
+    skos:definition "Relates an agent to a nomen that is an appellation of agent in natural language and phrasing used in common discourse."@en, "Liittää toimijan nomeniin, joka on luonnollisella kielellä ja sanamuodolla oleva, yleisessä diskurssissa käytetty nimitys toimijasta."@fi, "Relaterer en agent til en betegnelse for agent på et naturlig språk og med frasering brukt i alminnelig diskurs."@no, "Relateert een actor aan een nomen dat is een benaming van actor in natuurlijke taal en formulering gebruikt in alledaags taalgebruik."@nl, "يربط وكيلا بتسمية لوكيل في اللغة الطبيعية وفي العبارات المستخدمة في الخطاب العام."@ar, "Relaciona un agent amb un nomen que Ã©s una apelÂ·laciÃ³ dâ€™agent en llenguatge i frases naturals usada en el discurs comÃº."@ca, "Relaterer en agent til et nomen, som er en benævnelse på agent på normalsprog og med formuleringer, som bruges alment."@da, "Seostab tegija tegija nimetusega loomulikus keeles ja sõnastuses, mida kasutatakse ühises diskursuses."@et, "Setzt einen Akteur in Beziehung zu einer Bezeichnung für einen Akteur in natürlicher Sprache und Ausdrucksweise, die beim normalen Sprechen und Schreiben verwendet wird."@de, "Egy ágenst hozzákapcsol az ágens  természetes nyelvű és szóhasználatú megnevezéséhez, amelyet a közbeszédben használ."@hu, "Met un agent en relation avec un nomen qui est une appellation d’agent exprimée dans un langage et une formulation naturels et utilisée dans le langage courant."@fr, "Sasaista aģentu ar nomenu, kas ir aģenta apzīmējums dabiskajā valodā, ko izmanto savstarpējā saziņā."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#appellation> .
+  
+<http://registry.digitopia.nl/ribs#variantName>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50415> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has variant name of agent"@en, "toimijan varianttinimi"@fi, "har variantform av navn for agent"@no, "heeft variantnaam van actor"@nl, "له اسم مختلف لوكيل"@ar, "té com a variant de nom d’agent"@ca, "har variant af navn på agent"@da, "tegija variantnimi"@et, "hat abweichenden Namen eines Akteurs"@de, "ágens névvariánsa a következő:"@hu, "ha come nome variante di agente"@it, "έχει εναλλακτικό όνομα του φορέα"@el, "a pour variante de nom d’agent"@fr, "aģenta cits vārds/nosaukums"@lv ;
+    skos:definition "Relates an agent to a nomen that is a name of agent that is not selected for preference in a specific application or context."@en, "Liittää toimijan nomeniin, joka on nimi, jota ei ole valittu toimijan ensisijaiseksi nimeksi tietyssä sovelluksessa tai kontekstissa."@fi, "Relaterer en agent til et navn for agent som ikke er valgt som preferanse i en bestemt applikasjon eller kontekst."@no, "Relateert een actor aan een nomen dat is een naam van actor die niet de voorkeur heeft gekregen in een specifieke applicatie of context."@nl, "يربط وكيلا باسم وكيل لم يُختر كاسم مفضل في خطة ترميز مفردات محددة."@ar, "Relaciona un agent amb un nomen que Ã©s un nom dâ€™agent que no se selecciona com a preferent en una aplicaciÃ³ o un context especÃ­fic."@ca, "Relaterer en agent til et nomen, som er et navn på agent, som ikke er valgt som præference i en specifik anvendelse eller kontekst."@da, "Seostab tegija tegija nimega, mis kindlas rakenduses või kontekstis ei ole valitud eelistatuks."@et, "Setzt einen Akteur in Beziehung zu einem Namen eines Akteurs, der in einer bestimmten Anwendung oder in einem bestimmten Kontext nicht als Vorzugsform bestimmt wird."@de, "Egy ágenst hozzákapcsol az ágens  nevéhez, amelyet egy speciális alkalmazásban vagy összefüggésben nem részesítenek előnyben."@hu, "Correla un agente a un nome di agente non scelto come preferito in una specifica applicazione o contesto."@it, "Met un agent en relation avec un nomen qui est un nom d’agent ne faisant pas l’objet d’un choix privilégié dans une application ou un contexte spécifiques."@fr, "Sasaista aģentu ar nomenu, kas ir aģenta vārds/nosaukums, kurš nav izvēlēts kā prioritārs noteiktā lietojumprogrammā vai kontekstā."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#name> .
+
+<http://registry.digitopia.nl/ribs#preferredName>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50065> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has preferred name of agent"@en, "heeft voorkeursnaam voor actor"@nl; 
+    skos:definition "A name for an agent that is selected for preference in a specific application or context."@en, "Een naam voor een actor die de voorkeur heeft gekregen in een specifieke applicatie of context."@nl ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#name> .
+
+<http://registry.digitopia.nl/ribs#accessPoint>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50373> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has access point"@en, "heeft ingang"@nl;
+    skos:definition "Relates an enity to a nomen that is an appellation of the entity in natural language that is taken from a vocabulary encoding scheme or is constructed using a string encoding scheme."@en, "Relateert een entitiet aan een nomen dat een benaming is van de entiteit in natuurlijke taal die ontleend is aan een vocabulair coderingsschema of gevormd is volgens een string coderingsschema."@nl; 
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#appellation> .
+  
+<http://registry.digitopia.nl/ribs#authorizedAccessPoint>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50403> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has authorized access point"@en, "heeft geautoriseerde ingang"@nl ; 
+    skos:definition "Relates an entity to a nomen that is an access point for it that is selected for preference in a specific vocabulary encoding scheme."@en, "Relateert een entiteit aan een nomen dat er een ingang voor is die als voorkeur geselecteerd is in een specifiek vocabulair coderingssysteem."@nl ; 
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#accessPoint> .
+
+<http://registry.digitopia.nl/ribs#identifier>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50052> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has identifier"@en,  "heeft identificatie"@nl ;
+    skos:definition "Has identifier."@en, "Heeft identifier"@nl;
+     a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#appellation> .
+
+<http://registry.digitopia.nl/ribs#subjectOf>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50366> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+     a rdf:Property ;
+    rdfs:label "is subject of"@en, "is onderwerp van"@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    skos:definition "Relates an entity to a work that is about it."@en, "Relateert een entity aan een werk dat er over gaat."@nl;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    rdfs:comment "Would it be wise / handy to specify a range here? Is 'everything' an RDA entity?"@en .
+
+<http://registry.digitopia.nl/ribs#hasCategory>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50490> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has category"@en, "valt onder categorie"@nl;
+    skos:definition "Relates an enitityy to a (non RDF class) type to which it belongs."@en, "Relateert een entiteit aan een (niet-RDF klasse) type waartoe het behoort."@nl ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> .
+
+<http://registry.digitopia.nl/ribs#describedBy>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50427> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "entity is described by"@en, "entiteit wordt beschreven in"@nl;
+    a rdf:Property ;
+    skos:definition "Relates an entityto a work that is a description of it."@en, "Relateert een entiteit aan een werk dat het beschrijft."@nl;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#subjectOf> .    
+
 # Domain Agent, generalized:
 
 <http://registry.digitopia.nl/ribs#creatorOf>
@@ -263,14 +421,26 @@
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related>;
     skos:altLabel "modifier of"@en, "muokkaajana kappaleessa"@fi, "tilpasser av"@no, "مُعّدل"@ar, "modificador de"@ca, "tilpasser af"@da, "muutja eksemplaris"@et, "módosítója a következőnek:"@hu, "modificatore di"@it, "τροποποιητής του"@el, "modificateur de"@fr, "Bearbeiter eines Exemplars von"@de .
 
-<http://registry.digitopia.nl/ribs#memberOfCollective>
+<http://registry.digitopia.nl/ribs#hasMember>
     rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50445> ;
     rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
     rdfs:label "has member of collective agent"@en, "heeft lid van collectieve actor"@nl;  
     a rdf:Property ;
-    skos:definition "Relates an agenr to a member of a collective agent."@en, "Relateert een actor een collectieve actor."@nl;  
+    skos:definition "Relates a collective agent to a member agent."@en, "Relateert een collectieve actor aan een collectieve die er lid van is."@nl;  
+    rdfs:domain <http://registry.digitopia.nl/ribs#CollectiveAgent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Agent> ;
+    owl:inverseOf <http://registry.digitopia.nl/ribs#memberOf> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#memberOf>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50445> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is member of collective agent"@en, "is lid van collectieve actor"@nl;  
+    a rdf:Property ;
+    skos:definition "Relates an agent to a collective agent it is a member of."@en, "Relateert een actor een collectieve actor waar deze als lid toe behoort."@nl;  
     rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
     rdfs:range <http://registry.digitopia.nl/ribs#CollectiveAgent> ;
+    owl:inverseOf <http://registry.digitopia.nl/ribs#hasMember> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
 
 <http://registry.digitopia.nl/ribs#appelleePOf>
@@ -992,7 +1162,7 @@
     a rdf:Property ;
     rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
     rdfs:range <http://registry.digitopia.nl/ribs#Manifestation> ;
-  rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAggregate> .
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAggregate> .
 
 <http://registry.digitopia.nl/ribs#contributorOfMusic>
     owl:sameAs <http://rdaregistry.info/Elements/a/P50459> ;
@@ -1004,3 +1174,67 @@
     rdfs:range <http://registry.digitopia.nl/ribs#Manifestation> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAggregate> ;
     skos:altLabel "composer (expression) of"@en, "säveltäjä (ekspressio) manifestaatiossa"@fi, "compositeur (expression) de"@fr, "komponist (udtryk) af"@da, "Komponistin/Komponist (Expression) von"@de, "compositor (expressiÃ³) de"@ca .
+
+<http://registry.digitopia.nl/ribs#contributorOfSpeech>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50483> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is contributor agent of speech of"@en, "puheeseen osallinen toimija manifestaatiossa"@fi, "er bidragsyter til tale for (agent)"@no, "is bijdrager-actor van spraak van"@nl, "هو وكيل مساهم في حديث لـ"@ar, "és agent contribuïdor de discurs de"@ca, "er agent, som er bidragsyder til tale af"@da, "kõneloome kaastööline (tegija) kehastuses"@et, "ist Akteur als Beiträgerin/Beiträger einer Rede von"@de, "közreműködő ágense a következő beszédnek:"@hu, "è contributore agente di discorso di"@it, "είναι συντελεστής φορέας της ομιλίας του"@el, "est un agent contributeur de contenu vocal de"@fr, "ir runas līdzradītājs (aģents)"@lv ;
+    skos:definition "Relates an agent to a manifestation that is an aggregate that embodies an expression of a vocal work that is created by an agent."@en, "Liittää toimijan manifestaatioon, joka on aggregaatti, joka sisältää puheteoksen ekspression, jonka toimija on luonut."@fi, "Relaterer en agent til en manifestasjon som er et aggregat som realiserer et verk bestående av tale skapt av en agent."@no, "Relateert een actor aan een manifestatie die een aggregaat is die een expressie van een vocaal werk verwezenlijkt dat is gecreëerd door een actor."@nl, "يربط وكيلا بتجسيدة عبارة عن تجميعة تجسد عملا بكلمات منطوقة أنشأه وكيل."@ar, "Relaciona un agent amb una manifestaciÃ³ que Ã©s un agregat que materialitza una expressiÃ³ dâ€™una obra oral que Ã©s creada per un agent."@ca, "Relaterer en agent til en manifestation, som er en samling, som rummer et udtryk af et værk med talte ord, som er skabt af en agent."@da, "Seostab tegija kehastusega, mis on liitum, milles on teostatud tegija loodud suulise teose väljendus."@et, "Setzt einen Akteur in Beziehung zu einem Aggregat (Manifestation), das eine Expression eines gesprochenen Werks verkörpert, die ein Akteur erstellt hat."@de, "Egy ágenst hozzákapcsol egy aggregátum megjelenési formához, amely az ágens által létrehozott élőszóművet testesíti meg."@hu, "Correla un agente a una manifestazione che è un aggregato che materializza un'opera orale creata da un agente."@it, "Met un agent en relation avec une manifestation qui consiste en un agrégat matérialisant une expression d’une œuvre orale créée par un agent."@fr, "Sasaista aģentu ar manifestāciju, kas ir apkopojums, kas ietver aģenta radītu mutvārdu darbu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Manifestation> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAggregate> .
+    
+<http://registry.digitopia.nl/ribs#contributorOfStillImage>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50469> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is contributor agent of still image of"@en, "stillkuvaan osallinen toimija manifestaatiossa"@fi, "er bidragsyter til bilde for (agent)"@no, "is bijdrager-actor van stilstaand beeld van"@nl, "هو وكيل مساهم في صور ثابتة لـ"@ar, "és agent contribuïdor d’imatge fixa de"@ca, "er agent, som er bidragsyder til stillbillede af"@da, "kaastööline liikumatu pildi alal (tegija) kehastuses"@et, "ist Akteur als Illustratorin/Illustrator von"@de, "közreműködő ágense a következő állóképnek:"@hu, "è contributore agente di immagine fissa di"@it, "είναι συντελεστής φορέας της σταθερής εικόνας του"@el, "est un agent contributeur d’image fixe de"@fr, "ir attēla līdzradītājs (aģents)"@lv ;
+    skos:definition "Relates an agent to a manifestation that is an aggregate that embodies an expression of a still image work that is created by an agent."@en, "Liittää toimijan manifestaatioon, joka on aggregaatti, joka sisältää stillkuvateoksen ekspression, jonka toimija on luonut."@fi, "Relaterer en agent til en manifestasjon som er et aggregat som realiserer et blideverk skapt av en agent."@no, "Relateert een actor aan een manifestatie die een aggregaat is die een expressie van een stilstaand beeldwerk verwezenlijkt dat gecreëerd is door een actor."@nl, "يربط وكيلا بتجسيدة عبارة عن تجميعة تجسد تجسد عملا بصور ثابتة أنشأه وكيل."@ar, "Relaciona un agent amb una manifestació que és un agregat que materialitza una obra d’imatge fixa creada per un agent."@ca, "Relaterer en agent til en manifestation, som er en samling, som rummer et udtryk af et værk med stillbilleder, som er skabt af en agent."@da, "Seostab tegija kehastusega, mis on liitum, milles on teostatud tegija loodud liikumatust pildist koosneva teose väljendus."@et, "Setzt einen Akteur in Beziehung zu einem Aggregat (Manifestation), das eine Expression eines unbewegten Bildwerks verkörpert, die ein Akteur erstellt hat."@de, "Egy ágenst hozzákapcsol egy aggregátum megjelenési formához, amely az ágens által létrehozott állóképművet testesíti meg."@hu, "Correla un agente a una manifestazione che è un aggregato che materializza un'immagine fissa creata da un agente."@it, "Met un agent en relation avec une manifestation qui consiste en un agrégat matérialisant une expression d’une œuvre d’image fixe créée par un agent."@fr, "Sasaista aģentu ar manifestāciju, kas ir apkopojums, kas ietver aģenta radītu attēla darbu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Manifestation> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAggregate> ;
+    skos:altLabel "illustrator of"@en, "photographer (expression) of"@en, "valokuvaaja (ekspressio) manifestaatiossa"@fi, "illustratør av "@no, "رسام صور إيضاحية لـ"@ar, "fotÃ²graf (expressiÃ³) de"@ca, "fotograf (udtryk) af"@da, "illustreerija kehastuses"@et, "illusztrátora a következőnek:"@hu, "illustratore di"@it, "εικονογράφος του"@el, "photographe (expression) de"@fr, "Fotograf (Expression) von"@de .
+    
+<http://registry.digitopia.nl/ribs#contributorOfText>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50475> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is contributor agent of text of"@en, "tekstiin osallinen toimija manifestaatiossa"@fi, "er bidragsyter til tekst for (agent)"@no, "is bijdrager-actor van tekst van"@nl, "هو وكيل مساهم في نص لـ"@ar, "és agent contribuïdor de text de"@ca, "er agent, som er bidragsyder til tekst af"@da, "tekstiloome kaastööline (tegija) kehastuses"@et, "ist Akteur als Beiträgerin/Beiträger von ergänzendem Text von"@de, "közreműködő ágense a következő szövegnek:"@hu, "è contributore agente di testo di"@it, "είναι συντελεστής φορέας του κειμένου του"@el, "est un agent contributeur de texte de"@fr, "ir teksta līdzradītājs (aģents)"@lv ;
+    skos:definition "Relates an agent to a manifestation that is an aggregate that embodies an expression of a textual work that is created by an agent."@en, "Liittää toimijan manifestaatioon, joka on aggregaatti, joka sisältää tekstiteoksen ekspression, jonka toimija on luonut."@fi, "Relaterer en agent til en manifestasjon som er et aggregat som realiserer et tekstlig verk skapt av en agent."@no, "Relateert een actor aan een manifestatie die een aggregaat is die een expressie van een tekstwerk verwezenlijkt dat gecreëerd is door een actor."@nl, "يربط وكيلا بتجسيدة عبارة عن تجميعة تجسد عملا نصيا أنشأه وكيل."@ar, "Relaciona un agent amb una manifestaciÃ³ que Ã©s un agregat que materialitza una expressiÃ³ dâ€™una obra textual que Ã©s creada per un agent."@ca, "Relaterer en agent til en manifestation, som er en samling, som rummer et udtryk af et tekstværk, som er skabt af en agent."@da, "Seostab tegija kehastusega, mis on liitum, milles on teostatud tegija loodud tekstteose väljendus."@et, "Setzt einen Akteur in Beziehung zu einem Aggregat (Manifestation), das eine Expression eines textlichen Werks verkörpert, die ein Akteur erstellt hat."@de, "Egy ágenst hozzákapcsol egy aggregátum megjelenési formához, amely az ágens által létrehozott szöveges művet testesíti meg."@hu, "Correla un agente a una manifestazione che è un aggregato che materializza un'opera testuale creata da un agente."@it, "Met un agent en relation avec une manifestation qui consiste en un agrégat matérialisant une expression d’une œuvre textuelle créée par un agent."@fr, "Sasaista aģentu ar manifestāciju, kas ir apkopojums, kas ietver aģenta radītu teksta darbu."@lv ;
+    skos:altLabel "writer of supplementary textual content of"@en, "writer of postface of"@en, "writer of added text of"@en, "writer of preface of"@en, "writer of added commentary of"@en, "writer of introduction of"@en, "writer of added lyrics of"@en, "writer of afterword of"@en, "writer of foreword of"@en, "saatesanojen kirjoittaja manifestaatiossa"@fi, "forfatter av supplerende tekstlig innhold for"@no, "forfatter av epilog for"@no, "forfatter av tilføyd tekst for"@no, "forfatter av prolog for"@no, "forfatter av tilføyde kommentarer for"@no, "forfatter av innledning for"@no, "forfatter av tilføyde sangtekster for"@no, "forfatter av etterord for"@no, "forfatter av forord"@no, "كاتب توطئة لـ"@ar, "escriptor dâ€™un prÃ²leg de"@ca, "forfatter af forord til"@da, "täiendava tekstsisu autor kehastuses"@et, "järelsõna autor kehastuses"@et, "teksti autor kehastuses"@et, "eessõna autor kehastuses"@et, "kommenteerija kehastuses"@et, "sissejuhatuse autor kehastuses"@et, "laulusõnade autor kehastuses"@et, "Verfasserin/Verfasser eines Vorworts von"@de, "kiegészítő szöveges tartalom írója a következőnek:"@hu, "scrittore del contenuto testuale supplementare di"@it, "συγγραφέας του συνοδευτικού κειμενικού περιεχομένου του"@el, "συγγραφέας του προλόγου του"@el, "auteur de contenu textuel supplémentaire de "@fr, "postfacier de"@fr, "auteur de texte ajouté de"@fr, "préfacier de"@fr, "auteur de commentaire ajouté de"@fr, "auteur d’introduction de"@fr, "auteur de paroles ajoutées de"@fr, "auteur d’après-propos de"@fr, "auteur d’avant-propos de"@fr ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Manifestation> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAggregate> .
+    
+<http://registry.digitopia.nl/ribs#costumeDesignerOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50144> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is costume designer agent of"@en, "est un agent concepteur de costumes de"@fr, "είναι ενδυματολόγος φορέας του"@el, "er agent, som er kostumedesigner af"@da, "és agent dissenyador de vestuari de"@ca, "ist Akteur als Kostümbildnerin/Kostümbildner von"@de, "jelmeztervező ágense a következőnek:"@hu, "puvustaja (toimija) ekspressiossa"@fi, "er kostymedesigner for (agent)"@no, "is kostuumontwerper-actor van"@nl, "هو وكيل مصمم أزياء لـ"@ar, "kostüümikunstnik (tegija) väljenduses"@et, "è costumista agente di"@it, "ir kostīmu mākslinieks (aģents)"@lv ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent of designing costumes for a moving image production or for a musical or dramatic presentation or entertainment."@en, "Met un agent en relation avec une expression qui intègre une contribution de la part d’un agent consistant à concevoir des costumes pour une production d’images animées ou bien pour une présentation ou un spectacle musical ou dramatique."@fr, "Συνδέει έναν φορέα, ο οποίος συνεισφέρει σε μια έκφραση ενός έργου μέσα από τον σχεδιασμό των κουστουμιών για μια παραγωγή κινητής εικόνας ή για μια μουσική ή δραματική παράσταση ή άλλη ψυχαγωγία, με μια έκφραση."@el, "Setzt einen Akteur in Beziehung zu einer Expression, zu der ein Akteur beiträgt, indem er die Kostüme für eine Bewegtbildproduktion oder für eine musikalische oder dramatische Darbietung oder Aufführung entwirft."@de, "Relaterer en agent til et udtryk, som omfatter en agents bidrag ved at designe kostumer til en levende billedproduktion eller til en musikalsk eller dramatisk præsentation eller underholdning."@da, "Relaciona un agent  amb una expressió que inclou una contribució d’un agent amb el disseny del vestuari en el cas d’una producció d’imatge en moviment o una representació o un espectacle musical o dramàtic."@ca, "Liittää toimijan ekspressioon, jonka tekemiseen toimija osallistuu suunnittelemalla elokuvatuotannon tai musiikki- tai näytelmäesityksen puvustuksen."@fi, "Egy ágenst hozzákapcsol egy kifejezési formához, amely magában foglalja az ágens közreműködését jelmezek tervezésében mozgókép-produkciókhoz, zenei vagy drámai előadásokhoz vagy szórakoztató műsorokhoz."@hu, "Relaterer en agent til et uttrykk som inkluderer et bidrag fra en agent i form av å designe kostymene for en produksjon med levende bilder eller en musikalsk eller dramatisk forestilling eller form for underholdning."@no, "Relateert een actor aan een expressie die omvat een bijdrage door een actor door ontwerpen van kostuums voor een bewegend beeld-productie of voor een muzikale of dramatische presentatie of vermaak."@nl, "يربط وكيلا بتعبيرة تتضمن إسهام وكيل في تصميم أزياء لإنتاج فيلم؛ أو لعرض موسيقي أو درامي أو ترفيهي."@ar, "Seostab tegija väljendusega, millesse tegija on andnud panuse, kujundades kostüüme filmi tootmise, muusika- või draamaetenduse või meelelahutusürituse jaoks."@et, "Correla un agente a un'espressione che include un contributo da parte di un agente nella progettazione di costumi per una produzione di immagini in movimento o per una presentazione o spettacolo musicale o drammatico."@it, "Sasaista aģentu ar izteiksmi, kas ietver aģenta ieguldījumu, izstrādājot tērpu dizainu filmai, muzikālam vai dramatiskam uzvedumam, vai sarīkojumam."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Expression> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToPerformance> ;
+    skos:altLabel "costume designer of"@en, "puvustajana esityksessä"@fi, "kostymedesigner for"@no, "مصمم أزياء"@ar, "dissenyador de vestuari de"@ca, "kostumedesigner af"@da, "kostüümikunstnik väljenduses"@et, "jelmeztervezője a következőnek:"@hu, "costumista di"@it, "ενδυματολόγος του"@el, "créateur de costumes de"@fr, "Kostümbildner von"@de ;
+    skos:scopeNote "anche tradurre un contenuto linguistico tra forme della stessa lingua di periodi di tempo diversi."@it .
+    
+<http://registry.digitopia.nl/ribs#courtReporterOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50148> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is court reporter agent of"@en, "est un agent rapporteur judiciaire de"@fr, "είναι στενογράφος φορέας του"@el, "er agent, som er retsstenograf af"@da, "és agent relator d’un tribunal de"@ca, "ist Akteur als Gerichtsstenografin/Gerichtsstenograf von"@de, "bírósági jegyzőkönyvvezető ágense a következőnek:"@hu, "tuomioistuimen kirjuri (toimija) ekspressiossa"@fi, "er protokollfører for (agent)"@no, "is rechtbankverslaggever-actor van"@nl, "هو وكيل كاتب محكمة لـ"@ar, "kohtureporter (tegija) väljenduses"@et, "è stenografo del tribunale agente di"@it, "ir tiesas sekretārs (aģents)"@lv ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent of preparing an opinion of a court for publication."@en, "Met un agent en relation avec une expression qui intègre une contribution de la part d’un agent consistant à préparer une opinion d’un tribunal aux fins de publication."@fr, "Συνδέει έναν φορέα, ο οποίος συνεισφέρει σε μια έκφραση ενός έργου προετοιμάζοντας τις δικαστικές αποφάσεις προς δημοσίευση, με μια έκφραση. ."@el, "Setzt einen Akteur in Beziehung zu einer Expression, zu der ein Akteur beiträgt, indem er die Urteilsbegründung zur Veröffentlichung vorbereitet."@de, "Relaterer en agent til et udtryk, som omfatter en agents bidrag ved at klargøre en domstols afgørelser til publicering."@da, "Relaciona un agent amb una expressió que inclou una contribució d’un agent preparant una opinió d’un tribunal per a la seva publicació."@ca, "Liittää toimijan ekspressioon, jonka tekemiseen toimija osallistuu valmistelemalla tuomioistuimen lausunnon julkaistavaksi."@fi, "Egy ágenst hozzákapcsol egy kifejezési formához, amely magában foglalja az ágens közreműködését egy bírósági vélemény közzétételre történő előkészítésében."@hu, "Relaterer en agent til et uttrykk som inkluderer et bidrag fra en agent i form av å klargjøre en domstols kjennelser for utgivelse."@no, "Relateert een actor aan een expressie die omvat een bijdrage door een actor door voorbereiden van een oordeel van een rechtbank voor publicatie."@nl, "يربط وكيلا بتعبيرة تتضمن إسهام وكيل في إعداد رأي محكمة للنشر."@ar, "Seostab tegija väljendusega, millesse tegija on andnud panuse, valmistades avaldamiseks ette kohtu seisukohad."@et, "Correla un agente a un'espressione che include un contributo da parte di un agente nel preparare il parere di tribunale per la pubblicazione."@it, "Sasaista aģentu ar izteiksmi, kas ietver aģenta ieguldījumu, sagatavojot tiesas atzinumu publicēšanai."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#contributorToAmalgamation> ;
+    skos:altLabel "court reporter of"@en, "kirjurina oikeudenkäyntiasiakirjoissa"@fi, "protokollfører for"@no, "كاتب محكمة"@ar, "relator d’un tribunal de"@ca, "retsstenograf af"@da, "kohtureporter väljenduses"@et, "bírósági jegyzőkönyvvezetője a következőnek:"@hu, "stenografo del tribunale di"@it, "στενογράφος του"@el, "rapporteur judiciaire de"@fr, "Gerichtsstenograf von"@de .
+
+<http://registry.digitopia.nl/ribs#descendant>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50053> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has descendant"@en,  "heeft afstammeling"@nl;
+    skos:definition "Has descendant."@en, "Heeft afstammeling."@nl ; 
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
