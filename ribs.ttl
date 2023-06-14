@@ -377,6 +377,30 @@
     rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#subjectOf> . 
 
+<http://registry.digitopia.nl/ribs#dedicateeOf>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50210> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is dedicatee agent of"@en, "is opgedragene-actor van"@nl ;
+    skos:definition "Relates an agent to a WEMI-entity that acknowledges the inspiration or support of an agent."@en, "Relateert een actor aan een WEMI-entiteit die de inspiratie of steun van een actor erkent."@nl;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (<http://registry.digitopia.nl/ribs#Work> <http://registry.digitopia.nl/ribs#Expression> <http://registry.digitopia.nl/ribs#Manifestation> <http://registry.digitopia.nl/ribs#Item>) 
+     ] ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#dedicatorOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50132> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is dedicator agent of"@en, "est un agent dédicateur d’une œuvre de"@fr, "είναι αφιερωτής φορέας του"@el, "er agent, som er dedikationsskriver af"@da, "és agent dedicant de"@ca, "ist Akteur als Widmende/Widmender von"@de, "dedikáló ágense a következőnek:"@hu, "omistuskirjoituksen tekijä (toimija) teoksessa"@fi, "er agent som dediserer for"@no, "is opdrager-actor van"@nl, "هو وكيل مُهدي كتاب لـ"@ar, "pühendaja (tegija) teoses"@et, "è dedicante agente di"@it, "ir darba veltītājs (aģents)"@lv ;
+    skos:definition "Relates an agent to a work that is assigned as an acknowledgment of the inspiration or support of a related agent."@en, "Met un agent en relation avec une œuvre qui est dédiée en reconnaissance de l’inspiration ou du soutien d’un agent en relation."@fr, "Συνδέει έναν φορέα, από τον οποίο δημιουργείται η αφιέρωση, με ένα έργο."@el, "Setzt einen Akteur in Beziehung zu einem Werk, das als Zeichen der Anerkennung oder Unterstützung einem in Beziehung stehenden Akteur gewidmet ist."@de, "Relaterer en agent til et værk, som er tilegnet en relateret agent, som en anerkendelse af inspiration eller støtte."@da, "Relaciona un agent amb una obra que sâ€™assigna com a reconeixement per la inspiraciÃ³ o suport dâ€™un agent relacionat."@ca, "Liittää toimijan teokseen, joka on omistettu sitä innoittaneelle tai tukeneelle toimijalle. "@fi, "Egy ágenst hozzákapcsol egy műhöz, amelyet a műhöz fűződő ágens ösztönzésének vagy támogatásának köszöneteként jelölnek meg."@hu, "Relaterer en agent til et verk som er tilegnet som anerkjennelse for inspirasjonen eller støtten fra en relatert agent."@no, "Relateert een actor aan een werk dat toegekend is als erkenning van de inspiratie of hulp van een gerelateerde actor."@nl, "يربط وكيلا بعمل خُصص للإقرار بالإلهام أو الدعم الذي قدمه وكيل ذو صلة."@ar, "Seostab tegija teosega, mille seotud tegija on pühendanud kellelegi tänuavaldusena innustuse või toetuse eest."@et, "Correla un agente a un'opera che è assegnata come riconoscimento di ispirazione o sostegno di un agente correlato."@it, "Sasaista aģentu ar darbu, kas ir veltīts pateicībā par saistītā aģenta iedvesmojumu vai atbalstu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    skos:altLabel "dedicator of"@en, "omistuskirjoitus kappaleessa"@fi, "dedikatør for"@no, "مُهدي كتاب"@ar, "dedicant de"@ca, "tilegner af"@da, "pühendaja teoses"@et, "dedikálója a következőnek:"@hu, "dedicatore di"@it, "αφιερωτής του"@el, "dédicateur de"@fr, "Widmende/Widmender von"@de .
+
 # Domain Agent:
 
 <http://registry.digitopia.nl/ribs#reviserOf>
@@ -1224,3 +1248,64 @@
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#performerOf>;
     skos:altLabel "dancer of"@en, "tanssiesitys"@fi, "danser i "@no, "راقص"@ar, "ballarí de"@ca, "danser af"@da, "tantsija väljenduses"@et, "táncosa a következőnek:"@hu, "danzatore di"@it, "χορευτής του"@el, "danseur de"@fr, "Tänzer von"@de .
     
+<http://registry.digitopia.nl/ribs#depositorOf>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50047> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is depositor agent of"@en, "est un agent déposant de"@fr, "είναι καταθέτης φορέας του"@el, "er agent, som er udlåner af"@da, "és agent dipositador de"@ca, "ist Akteur als Leihgeberin/Leihgeber von"@de, "letétbe helyező ágense a következőnek:"@hu, "tallettaja (toimija) kappaleessa"@fi, "er deponent av (agent)"@no, "is bruikleen-actor van"@nl, "هو وكيل مودع لـ"@ar, "deponeerija (tegija) eksemplarile"@et, "è depositante agente di"@it, "ir deponētājs (aģents)"@lv ;
+    skos:definition "Relates an agent to an item that is deposited by an agent into the custody of another agent without transferring ownership."@en, "Met un agent en relation avec un item qui est déposé par un agent sous la garde d’un autre agent sans que sa propriété ne soit transférée."@fr, "Συνδέει έναν τρέχοντα κάτοχο ενός αντιτύπου ο οποίος κατέθεσε το τεκμήριο υπό την επιμέλεια φύλαξης κάποιου άλλου φορέα, ενόσω διατηρεί ακόμη την ιδιοκτησία του αντιτύπου."@el, "Setzt einen Akteur in Beziehung zu einem Exemplar, das von einem Akteur in die Obhut eines anderen Akteurs gegeben wird, ohne das Eigentumsrecht zu übertragen."@de, "Relaterer en agent til et eksemplar, som er deponeret i forvaring af en agent hos en anden agent, men uden at overgive ejerskab."@da, "Relaciona un agent amb un ítem que és dipositat per un agent sota la custòdia d’un altre agent sense transferir-li la propietat."@ca, "Liittää toimijan kappaleeseen, jonka toimija on luovuttanut toisen toimijan haltuun siirtämättä omistajuutta."@fi, "Egy ágenst hozzákapcsol egy példányhoz, amelyet az ágens egy másik ágens felügyelete alá helyez anélkül, hogy tulajdonjogot ruházna át."@hu, "Relaterer en agent til et eksemplar som av en agent er deponert til forvaring av en annen agent uten at eierskapet overføres."@no, "Relateert een actor aan een item dat door een actor in bewaring is gegeven bij een andere actor zonder overdracht van eigenaarschap."@nl, "يربط وكيلا بمفردة أودعها وكيل في عهدة وكيل آخر دون نقل الملكية."@ar, "Seostab tegija eksemplariga, mille tegija on deponeerinud teise tegija vastutavale hoiule ilma omandiõiguse üleminekuta."@et, "Correla un agente a un item che è depositato da agente nella custodia di altro agente senza trasferimento della proprietà."@it, "Sasaista aģentu ar vienību, ko aģents deponējis cita aģenta uzglabāšanā, vienlaikus saglabājot deponenta īpašumtiesības."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#ownerOf> ;
+    skos:altLabel "depositor of"@en, "deponointi"@fi, "deponent av"@no, "مودع"@ar, "dipositador de"@ca, "udlåner af"@da, "deponeerija eksemplarile"@et, "letétbe helyezője a következő:"@hu, "depositante di"@it, "καταθέτης του"@el, "déposant de"@fr, "Leihgeber von"@de .
+ 
+<http://registry.digitopia.nl/ribs#designerOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50185> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is designer agent of"@en, "est un agent designer de"@fr, "είναι σχεδιαστής φορέας του"@el, "er agent, som er designer af"@da, "és agent dissenyador de"@ca, "ist Akteur als Designerin/Designer von"@de, "tervező ágense a következőnek:"@hu, "designer (toimija) teoksessa"@fi, "er designer av (agent)"@no, "is ontwerper-actor van"@nl, "هو وكيل مصمم لـ"@ar, "kujundaja (tegija) teoses"@et, "è designer agente di"@it, "ir dizainers (aģents)"@lv ;
+    skos:definition "Relates an agent to a work that involves a responsibility of an agent for designing an object."@en, "Met un agent en relation avec une œuvre qui comporte une responsabilité de la part d’un agent en ce qui concerne la conception d’un objet."@fr, "Συνδέει έναν φορέα υπεύθυνο για τον σχεδιασμό ενός αντικειμένου, με ένα έργο."@el, "Setzt einen Akteur in Beziehung zu einem Werk, bei dem ein Akteur für die Gestaltung eines Objekts verantwortlich ist."@de, "Relaterer en agent til et værk, som involverer en agents ansvar for at designe et objekt."@da, "Relaciona un agent amb una obra que implica una responsabilitat d’un agent en el disseny d’un objecte."@ca, "Liittää toimijan teokseen, jossa toimija on vastuussa kohteen suunnittelusta tai muotoilusta."@fi, "Egy ágenst hozzákapcsol egy műhöz, amelyhez hozzátartozik az ágens felelőssége egy tárgy tervezéséért."@hu, "Relaterer en agent til et verk som involverer ansvar for en agent i form av utforming av en gjenstand."@no, "Relateert een actor aan een werk dat met zich meebrengt een verantwoordelijkheid van een actor voor het ontwerpen van een object."@nl, "يربط وكيلا بعمل يشتمل على مسئولية وكيل عن تصميم كائن."@ar, "Seostab tegija teosega, mis sisaldab tegija vastutust objekti kujunduse eest."@et, "Correla un agente a un'opera che implica una responsabilità di un agente per la progettazione di un oggetto."@it, "Sasaista aģentu ar darbu, kas ietver aģenta atbildību par objekta dizaina radīšanu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#creatorOf> ;
+    skos:altLabel "designer of"@en, "designerina teoksessa"@fi, "designer av"@no, "مصمم"@ar, "dissenyador de"@ca, "designer af"@da, "kujundaja teoses"@et, "disainer teoses"@et, "tervezője a következőnek:"@hu, "designer di"@it, "σχεδιαστής του"@el, "designer de"@fr, "Designer von"@de .
+
+<http://registry.digitopia.nl/ribs#student>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50281> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has student"@en, "έχει φοιτητή"@el, "har student"@da, "té com a estudiant"@ca, "hat Studentin/Student"@de, "a pour élève"@fr, "diákja a következő:"@hu, "oppilas"@fi, "har student"@no, "heeft student"@nl, "له طالب"@ar, "õppur"@et, "ha come studente"@it, "audzēknis"@lv ;
+    skos:definition "Relates a person to a person who receives instruction from another person."@en, "Συνδέει ένα φυσικό πρόσωπο με ένα φυσικό πρόσωπο που λαμβάνει οδηγίες από ένα άλλο φυσικό πρόσωπο."@el, "Setzt eine Person in Beziehung zu einer Person, die von einer anderen Person unterrichtet wird."@de, "Relaterer en person til en person, som modtager undervisning fra en anden person."@da, "Relaciona una persona amb una persona que rep instrucció d’una altra persona."@ca, "Liittää henkilön henkilöön, joka saa opetusta toiselta henkilöltä."@fi, "Met une personne en relation avec une personne qui reçoit l’enseignement d’une autre personne."@fr, "Egy személyt hozzákapcsol egy személyhez, akit a másik személy oktat."@hu, "Relaterer en person til en person som mottar opplæring fra en annen person."@no, "Relateert een persoon aan een persoon die instructie ontvangt van een andere persoon."@nl, "يربط شخصا بشخص يتلقى تعليمات من شخص آخر."@ar, "Seostab isiku isikuga, kes saab teiselt isikult õpetust. "@et, "Correla una persona a una persona che riceve istruzione da un'altra persona."@it, "Sasaista personu ar personu, kura saņem izglītojošus norādījumus no citas personas."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Person> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Person> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    skos:altLabel "opiskelija"@fi .
+
+<http://registry.digitopia.nl/ribs#studentAt>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50288> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "is student at"@en, "είναι φοιτητής σε"@el, "er studerende på"@da, "és estudiant a"@ca, "ist Studentin/Student an"@de, "est un élève à"@fr, "diákja a következőnek:"@hu, "oppilaitos"@fi, "er student ved"@no, "is student aan"@nl, "هو طالب لـ"@ar, "õppur asutuses"@et, "è studente presso"@it, "ir izglītojies"@lv ;
+    skos:definition "Relates a person to a corporate body who is an educational institution that provides instruction to a person."@en, "Συνδέει ένα φυσικό πρόσωπο με ένα εκπαιδευτικό ίδρυμα, το οποίο παρέχει οδηγίες σε ένα φυσικό πρόσωπο."@el, "Setzt eine Person in Beziehung zu einer Bildungseinrichtung (Körperschaft), die einer Person Unterricht erteilt."@de, "Relaterer en person til en korporation, som er en uddannelsesinstitution, som giver undervisning til en person."@da, "Relaciona una persona amb una entitat corporativa que és una institució educativa que proporciona instrucció a una persona."@ca, "Liittää henkilön oppilaitokseen, joka antaa opetusta henkilölle."@fi, "Met une personne en relation avec une collectivité qui consiste en un établissement d’enseignement fournissant un enseignement à une personne."@fr, "Egy személyt hozzákapcsol egy oktatási intézményhez, amely oktatást nyújt a személy számára. "@hu, "Relaterer en person til en korporasjon som er en utdanningsinstitusjon som gir en person opplæring."@no, "Relateert een persoon aan een corporatie die een onderwijsinstelling is die onderricht geeft aan een persoon."@nl, "يربط شخصا بهيئة هي مؤسسة تعليمية تقدم التعليم لشخص."@ar, "Seostab isiku haridusasutusega, kes pakub isikule õpetust."@et, "Correla una persona a un ente che è un'istituzione scolastica che fornisce istruzione a una persona."@it, "Sasaista personu ar institūciju, kur persona studē."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Person> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#CorporateBody> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#fellowStudent>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50279> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has fellow student"@en, "έχει συμφοιτητή"@el, "har medstuderende"@da, "té com a company d’estudis"@ca, "hat Kommilitonin/Kommilitonen"@de, "a pour compagnon d’études"@fr, "diáktársa a következő:"@hu, "opiskelutoveri"@fi, "har medstudent"@no, "heeft medestudent"@nl, "له زميل دراسة"@ar, "õpingukaaslane"@et, "ha come studente compagno"@it, "studiju biedrs"@lv ;
+    skos:definition "Relates a person to a person who is an associate of another student who is also formally engaged in learning."@en, "Συνδέει ένα φυσικό πρόσωπο με έναν συμφοιτητή κάποιου άλλου φοιτητή που επίσης εμπλέκεται τυπικά στη μάθηση"@el, "Setzt eine Person in Beziehung zu einer Studienkollegin/einem Studienkollegen (Person) einer anderen Studentin/eines anderen Studenten, die/der sich ebenfalls offiziell mit Studieren befasst."@de, "Relaterer en person til en person, der er en anden students arbejdskammerat, som også er formelt beskæftigt med at studere."@da, "Relaciona una persona amb una persona que Ã©s un associat dâ€™un altre estudiant que tambÃ© es dedica formalment a lâ€™aprenentatge."@ca, "Liittää henkilön henkilöön, joka on toisen opiskelijan kollega, joka myös virallisesti opiskelee."@fi, "Met une personne en relation avec une personne qui est un associé d’un autre élève qui est aussi engagé dans un processus formel d’apprentissage."@fr, "Egy személyt hozzákapcsol egy másik diák társához, aki formálisan is részt vesz a tanulásban."@hu, "Relaterer en person til en bekjent av en annen student som også er under formell utdanning."@no, "Relateert een persoon aan een persoon die is een geassocieerde van een andere student die ook formeel betrokken is bij leren."@nl, "يربط شخصا بزميل طالب آخر ينخرط أيضًا في التعلم بصورة رسمية."@ar, "Seostab isiku teise õppuriga, kes samuti vormiliselt õpib."@et, "Correla una persona a un collega di un altro studente che è anche formalmente impegnato nell'apprendere."@it, "Sasaista personu ar personu, kura vienlaicīgi ar citu studentu studēja mācību iestādē."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Person> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Person> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#degreeGrantingInstitutionOf>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50003> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is degree granting institution of"@en, "est une institution conférant un grade universitaire de"@fr, "είναι ίδρυμα χορήγησης πτυχίου του"@el, "er gradtildelende institution af"@da, "és institució que concedeix un títol acadèmic de"@ca, "ist grad-verleihende Institution von"@de, "diplomaadó intézménye a következőnek:"@hu, "oppiarvon myöntävä yhteisö teoksessa"@fi, "er tildelende institusjon for"@no, "is graadverstrekkende instantie van"@nl, "هي مؤسسة مانحة درجة لـ"@ar, "kraadi andev asutus teoses"@et, "è istituzione che rilascia un titolo accademico di"@it, "ir grāda piešķīrējinstitūcija"@lv ;
+    skos:definition "Relates a corporate body to a work that is a thesis or dissertation associated with an academic degree that is approved by a corporate body."@en, "Met une collectivité en relation avec une œuvre qui consiste en une thèse ou un mémoire associé à un grade universitaire qui est approuvé par une collectivité."@fr, "Συνδέει ένα συλλογικό όργανο που χορηγεί ένα ανώτερου ακαδημαϊκού επιπέδου πτυχίο, με ένα έργο."@el, "Setzt eine Körperschaft in Beziehung zu einer Hochschulschrift (Werk), die von einer Körperschaft genehmigt wird und mit einem akademischen Grad in Verbindung steht."@de, "Relaterer en korporation til et værk, som er en afhandling for en akademisk grad, som er godkendt af en korporation."@da, "Relaciona una entitat corporativa amb una obra que Ã©s una tesi o una dissertaciÃ³ associada amb un grau acadÃ¨mic i que Ã©s aprovada per una entitat corporativa."@ca, "Liittää yhteisön teokseen, joka on yhteisön hyväksymä akateemisen oppiarvon opinnäyte tai väitöskirja."@fi, "Egy testületet hozzákapcsol egy műhöz, amely egy tudományos fokozat elnyeréséért benyújtott értekezés, amelyet a testület jóváhagyott."@hu, "Relaterer en korporasjon til et verk som er en avhandling for en akademisk grad som tildeles en korporasjon."@no, "Relateert een corporatie aan een werk dat een scriptie of proefschrift is voor een academische graad dat is goedgekeurd door een corporatie."@nl, "يربط هيئة بعمل عبارة عن أطروحة أو رسالة جامعية ذات صلة بدرجة أكاديمية معتمدة من هيئة."@ar, "Seostab asutuse akadeemilise kraadi taotlemiseks esitatud teosega, mille asutus on heaks kiitnud."@et, "Correla un ente a un'opera che è una tesi per una laura universitaria approvata da un ente."@it, "Sasaista institūciju ar darbu, par ko ir saņemts akadēmiskais grāds, ko piešķīrusi institūcija."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#CorporateBody> ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Work> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
