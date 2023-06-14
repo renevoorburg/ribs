@@ -135,112 +135,6 @@
 <http://registry.digitopia.nl/ribs#related>
     rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50304> ;
     rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    a rdf:Property ;
-    rdfs:label "has related RDA entity of RDA entity "@en, "heeft gerelateerde RDA-entiteit van RDA-entiteit"@nl ;
-    skos:definition "Relates an RDA entity to an RDA entity associated with it."@en, "Relateert een RDA-entiteit aan een RDA-entiteit die er meei geassocieerd wordt."@nl;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:comment "Would it be wise / handy to specify a range here? Is 'everything' an RDA entity?"@en .
-
-<http://registry.digitopia.nl/ribs#relatedNomen>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50340> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
-    a rdf:Property ;
-    rdfs:label "has related nomen"@en, "heeft gerelateerde nomen"@nl;
-    skos:definition "Relates an entity to a nomen that is associated with it."@en, "Relateert een entiteit aan een nomen die er mee geassocieerd wordt."@nl;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
-     ] ;
-    rdfs:comment "In RIBS, an RDA Nomen can be represented as either a typed entity or an rdfs:Literal. For the latter case it is desirable to have a property that explicitly refers to what type of object it relates to, as is defined here"@en .
-
-<http://registry.digitopia.nl/ribs#relatedTimespan>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50339> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
-    a rdf:Property ;
-    rdfs:label "has related timespan"@en, "heeft gerelateerde periode"@nl;
-    skos:definition "Relates an entity to a timespan that is associated with it."@en, "Relateert een entiteit aan een periode die er mee geassocieerd wordt."@nl;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf (<http://registry.digitopia.nl/ribs#Timespan> rdfs:Literal) 
-     ] ;
-    rdfs:comment "In RIBS, an RDA Timespan can be represented as either a typed entity or an rdfs:Literal. For the latter case it is desirable to have a property that explicitly refers to what type of object it relates to, as is defined here."@en .
-
-<http://registry.digitopia.nl/ribs#appellation>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50378> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    a rdf:Property ;
-    rdfs:label "has appellation"@en, "heeft benaming"@nl; 
-    skos:definition "Relates an enity to a nomen that is used within a given scheme or context to refer to an agent."@en, "Relateert een entiteit aan een nomen dat wordt gebruikt binnen een bepaald schema of context om een actor aan te duiden."@nl;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
-     ] ;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#relatedNomen> .
- 
-<http://registry.digitopia.nl/ribs#accessPoint>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50373> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    a rdf:Property ;
-    rdfs:label "has access point"@en, "heeft ingang"@nl;
-    skos:definition "Relates an enity to a nomen that is an appellation of the entity in natural language that is taken from a vocabulary encoding scheme or is constructed using a string encoding scheme."@en, "Relateert een entitiet aan een nomen dat een benaming is van de entiteit in natuurlijke taal die ontleend is aan een vocabulair coderingsschema of gevormd is volgens een string coderingsschema."@nl; 
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
-     ] ;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#appellation> .
-  
-<http://registry.digitopia.nl/ribs#authorizedAccessPoint>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50403> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    a rdf:Property ;
-    rdfs:label "has authorized access point"@en, "heeft geautoriseerde ingang"@nl ; 
-    skos:definition "Relates an entity to a nomen that is an access point for it that is selected for preference in a specific vocabulary encoding scheme."@en, "Relateert een entiteit aan een nomen dat er een ingang voor is die als voorkeur geselecteerd is in een specifiek vocabulair coderingssysteem."@nl ; 
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:range [
-        a owl:Class ;
-        owl:unionOf (<http://registry.digitopia.nl/ribs#Nomen> rdfs:Literal) 
-     ] ;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#accessPoint> .
-
-<http://registry.digitopia.nl/ribs#subjectOf>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50366> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-     a rdf:Property ;
-    rdfs:label "is subject of"@en, "is onderwerp van"@nl;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    skos:definition "Relates an entity to a work that is about it."@en, "Relateert een entity aan een werk dat er over gaat."@nl;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
-    rdfs:comment "Would it be wise / handy to specify a range here? Is 'everything' an RDA entity?"@en .
-
-<http://registry.digitopia.nl/ribs#hasCategory>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50490> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    rdfs:label "has category"@en, "valt onder categorie"@nl;
-    skos:definition "Relates an enitityy to a (non RDF class) type to which it belongs."@en, "Relateert een entiteit aan een (niet-RDF klasse) type waartoe het behoort."@nl ;
-    a rdf:Property ;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> .
-
-<http://registry.digitopia.nl/ribs#describedBy>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50427> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
-    rdfs:label "entity is described by"@en, "entiteit wordt beschreven in"@nl;
-    a rdf:Property ;
-    skos:definition "Relates an entityto a work that is a description of it."@en, "Relateert een entiteit aan een werk dat het beschrijft."@nl;
-    rdfs:domain <http://registry.digitopia.nl/ribs#Entity> ;
-    rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
-    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#subjectOf> .    
-
-# Domain Entity, generalized:
-
-<http://registry.digitopia.nl/ribs#related>
-    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50304> ;
-    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
     a rdf:Property, owl:SymmetricProperty ;
     rdfs:label "has related RDA entity of RDA entity "@en, "heeft gerelateerde RDA-entiteit van RDA-entiteit"@nl ;
     skos:definition "Relates an RDA entity to an RDA entity associated with it."@en, "Relateert een RDA-entiteit aan een RDA-entiteit die er meei geassocieerd wordt."@nl;
@@ -394,6 +288,16 @@
     rdfs:range <http://registry.digitopia.nl/ribs#Work> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#subjectOf> .    
 
+<http://registry.digitopia.nl/ribs#hasHistory>
+    rdf:seeAlso <http://rdaregistry.info/Elements/a/P50064> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has history"@en, "heeft geschiedenis"@nl;
+    skos:definition "Relates an enity to a summary of information about it."@en, "Relateert een entiteit aan een samenvatting van informatie over haar geschiedenis."@nl;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Entity>;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "TODO /revisit..." .
+
 # Domain Agent, generalized:
 
 <http://registry.digitopia.nl/ribs#creatorOf>
@@ -443,7 +347,27 @@
     owl:inverseOf <http://registry.digitopia.nl/ribs#hasMember> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
 
-<http://registry.digitopia.nl/ribs#appelleePOf>
+<http://registry.digitopia.nl/ribs#prominentMember>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50060> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has prominent member"@en, "heeft prominent lid"@nl ;
+    skos:definition "Has prominent member."@en, "Heeft prominent lid."@nl;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#memberOf> .
+
+<http://registry.digitopia.nl/ribs#founded>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50062> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has founded corporate body"@en, "heeft corporatie opgericht"@nl ;
+    skos:definition "Has founded corporate body."@en, "Heeft corporatie gesticht."@nl;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#CorporateBody> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#appelleeOf>
     rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50085> ;
     rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
     rdfs:label "is appellee agent of"@en, "is gedaagde partij van"@nl ;
@@ -1238,3 +1162,65 @@
     rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
     rdfs:range <http://registry.digitopia.nl/ribs#Agent> ;
     rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#usesLanguage>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50401> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    a rdf:Property ;
+    rdfs:label "has language of agent"@en, "toimijan käyttämä kieli"@fi, "har språk for agent"@no, "heeft taal van actor"@nl, "له لغة لوكيل"@ar, "té com a llengua d’un agent"@ca, "har sprog for agent"@da, "tegija keel"@et, "hat Sprache eines Akteurs"@de, "ágens nyelve a következő:"@hu, "ha come lingua di agente"@it, "έχει γλώσσα του φορέα"@el, "a pour langue d’un agent"@fr, "aģenta valoda"@lv ;
+    skos:definition "Relates an agent to a language that is used by an agent in its communications."@en, "Liittää toimijan kieleen, jota toimija käyttää viestinnässään."@fi, "Relaterer en agent til et språk som brukes av en agent i sin kommunikasjon."@no, "Relateert een actor aan een taal die gebruikt is door een actor in zijn communicatie."@nl, "يربط وكيلا بلغة يستخدمها وكيل في اتصالاته."@ar, "Relaciona un agent amb una llengua que Ã©s usada per un agent en les seves comunicacions."@ca, "Relaterer en agent til et sprog, som en agent anvender i sin kommunikation."@da, "Seostab tegija keelega, mida tegija suhtluses kasutab."@et, "Setzt einen Akteur in Beziehung zu einer Sprache, die ein Akteur bei seiner Kommunikation verwendet."@de, "Egy ágenst hozzákapcsol egy nyelvhez, amelyet az ágens saját kommunikációjában használ. "@hu, "Correla un agente a una lingua utilizzata da un agente nelle sue comunicazioni."@it, "Met un agent en relation avec une langue qu’un agent utilise pour sa communication."@fr, "Sasaista aģentu ar valodu, ko aģents lieto saziņā."@lv ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:comment "No range specified here."@en .
+
+<http://registry.digitopia.nl/ribs#sponsored>
+    rdfs:seeAlso <http://rdaregistry.info/Elements/a/P50063> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "has sponsored"@en, "heeft gesponsord"@nl;
+    skos:definition "Relates an agent to an entity body sponsored by a it."@en, "Relateert een actor aan een entitet die er door gesponsord is."@nl;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Entity> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> .
+
+<http://registry.digitopia.nl/ribs#ownerOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50165> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is owner agent of"@en, "est un agent propriétaire de"@fr, "είναι κάτοχος φορέας του"@el, "er agent, som er ejer af"@da, "és agent propietari de"@ca, "ist Akteur als Eigentümerin/Eigentümer von"@de, "tulajdonos ágense a következőnek:"@hu, "omistaja (toimija) kappaleessa"@fi, "er eier av (agent)"@no, "is eigenaar-actor van"@nl, "هو وكيل مالك لـ"@ar, "omanik (tegija) eksemplarile"@et, "è possessore agente di"@it, "ir īpašnieks (aģents)"@lv ;
+    skos:definition "Relates an agent to an item that involves a responsibility of an agent for legal possession."@en, "Met un agent en relation avec un item qui comporte une responsabilité de la part d’un agent en ce qui concerne la propriété légale."@fr, "Συνδέει έναν φορέα, ο οποίος έχει τη νόμιμη κατοχή ενός αντιτύπου, με ένα αντίτυπο."@el, "Setzt einen Akteur in Beziehung zu einem Exemplar, das im rechtmäßigen Besitz eines Akteurs ist."@de, "Relaterer en agent til et eksemplar, som involverer en agents ansvar for lovlig besiddelse."@da, "Relaciona un agent amb un ítem que implica una responsabilitat d’un agent en la possessió legal actual o anterior."@ca, "Liittää toimijan kappaleeseen, joka on laillisesti toimijan omistuksessa."@fi, "Egy ágenst hozzákapcsol egy példányhoz, amelyhez hozzátartozik az ágens tulajdonjog iránti felelőssége. "@hu, "Relaterer en agent til et eksemplar som involverer ansvar for en agent i form av rettmessig eierskap."@no, "Relateert een actor aan een item dat met zich meebrengt een verantwoordelijkheid van een actor voor wettelijk bezit."@nl, "يربط وكيلا بمفردة تنطوي على مسئولية وكيل عن الملكية القانونية."@ar, "Seostab tegija eksemplariga, mis kuulub või on kuulunud õiguspäraselt tegijale."@et, "Correla un agente con itemche implica la responsabilità di un agente nel possesso legale."@it, "Sasaista aģentu ar vienību, kas ietver aģenta atbildību par likumīgu īpašumu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    skos:altLabel "owner of"@en, "omistajana kappaleelle"@fi, "eier av "@no, "مالك"@ar, "propietari de"@ca, "ejer af"@da, "omanik eksemplarile"@et, "tulajdonosa a következőnek:"@hu, "possessore di"@it, "κάτοχος του"@el, "propriétaire de"@fr, "Eigentümer"@de .
+
+<http://registry.digitopia.nl/ribs#formerOwnerOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50163> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is former owner agent of"@en, "est un ancien agent propriétaire de"@fr, "είναι προηγούμενος κάτοχος φορέας του"@el, "er agent, som er tidligere ejer af"@da, "és agent propietari anterior de"@ca, "Ist Akteur als frühere Eigentümerin/früherer Eigentümer von"@de, "korábbi tulajdonos ágense a következőnek:"@hu, "entinen omistaja (toimija) kappaleessa"@fi, "er tidligere eier av (agent)"@no, "is voormalige eigenaar-actor van"@nl, "هو وكيل مالك سابقا"@ar, "endine omanik (tegija) eksemplarile"@et, "è precedente proprietario agente di"@it, "ir agrākais īpašnieks (aģents)"@lv ;
+    skos:definition "Relates an agent to an item that involves a responsibility of an agent for former legal possession."@en, "Met un agent en relation avec un item qui comporte une responsabilité de la part d’un agent en ce qui concerne la propriété légale antérieure."@fr, "Συνδέει έναν φορέα, ο οποίος είχε προηγούμενα τη νόμιμη κατοχή ενός αντιτύπου, με ένα αντίτυπο."@el, "Setzt einen Akteur in Beziehung zu einem Exemplar, das früher im rechtmäßigen Besitz eines Akteurs war."@de, "Relaterer en agent til et eksemplar, som involverer en agents ansvar for tidligere at have haft lovlig besiddelse."@da, "Relaciona un agent amb un ítem que implica una responsabilitat d’un agent en la possessió legal anterior."@ca, "Liittää toimijan kappaleeseen, jonka toimija on aiemmin laillisesti omistanut."@fi, "Egy ágenst hozzákapcsol egy példányhoz, amelyhez hozzátartozik az ágens korábbi tulajdonjog iránti felelőssége. "@hu, "Relaterer en agent til et eksemplar som involverer ansvar for en agen i form av å være en tidligere rettmessig eier."@no, "Relateert een actor aan een item dat met zich meebrengt een verantwoordelijkheid van een actor betreffende voormalig wettelijk bezit."@nl, "يربط وكيلا بمفردة تنطوي على مسئولية وكيل عن الملكية القانونية السابقة."@ar, "Seostab tegija eksemplariga, mis kuulus varem õiguspäraselt tegijale. "@et, "Correla un agente con itemche implica la responsabilità di un agente nel possesso legale precedente."@it, "Sasaista aģentu ar vienību, kas ietver aģenta atbildību par bijušo likumīgo īpašumu."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:subPropertyOf <<http://registry.digitopia.nl/ribs#related> ;
+    skos:altLabel "former owner of"@en, "aiempana omistajana kappaleelle"@fi, "tidligere eier av"@no, "مالك سابقا"@ar, "propietari anterior de"@ca, "tidligere ejer af"@da, "endine omanik eksemplarile"@et, "korábbi tulajdonosa a következőnek:"@hu, "proprietario precedente di"@it, "προηγούμενος ιδιοκτήτης του"@el, "ancien propriétaire de"@fr, "Früherer Eigentümer von"@de .
+    
+<http://registry.digitopia.nl/ribs#custodianOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50164> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is custodian agent of"@en, "est un agent dépositaire de"@fr, "είναι φύλακας φορέας του"@el, "er agent, som er forvalter af"@da, "és agent dipositari de"@ca, "ist Akteur als Verwahrerin/Verwahrer von"@de, "letétkezelő ágense a következőnek:"@hu, "säilyttäjä (toimija) kappaleessa"@fi, "er oppbevarer av (agent)"@no, "is bewaarder-actor van"@nl, "هو وكيل وصي على"@ar, "vastutav hoidja (tegija) eksemplarile"@et, "è depositario agente di"@it, "ir pārvaldītājs (aģents)"@lv ;
+    skos:definition "Relates an agent to an item that involves a responsibility of an agent for legal custody."@en, "Met un agent en relation avec un item qui comporte une responsabilité de la part d’un agent en ce qui concerne la garde légale."@fr, "Συνδέει έναν φορέα, ο οποίος έχει τη νόμιμη επιμέλεια φύλαξης ενός αντιτύπου, με ένα αντίτυπο."@el, "Setzt einen Akteur in Beziehung zu einem Exemplar, das sich in der rechtmäßigen Verwahrung eines Akteurs befindet."@de, "Relaterer en agent til et eksemplar, som involverer en agents ansvar for lovlig forvaring."@da, "Relaciona un agent amb un ítem que implica una responsabilitat d’un agent en la custòdia legal."@ca, "Liittää toimijan kappaleeseen, joka on laillisesti toimijan säilytyksessä."@fi, "Egy ágenst hozzákapcsol egy példányhoz, amelyhez hozzátartozik az ágens megőrzés iránti felelőssége. "@hu, "Relaterer en agent til et eksemplar som involverer ansvar for en agent i form av lovlig forvaring."@no, "Relateert een actor aan een item dat met zich meebrengt een verantwoordelijkheid van een actor voor wettelijke bewaring."@nl, "يربط وكيلا بمفردة تنطوي على مسئولية وكيل عن الوصاية القانونية."@ar, "Seostab tegija eksemplariga, mis on tegija õiguspärasel vastutaval hoiul."@et, "Correla un agente con itemche implica la responsabilità di un agente nella custodia legale."@it, "Sasaista aģentu ar vienību, kas ietver aģenta atbildību par likumīgu pārvaldību."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Item> ;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#related> ;
+    skos:altLabel "custodian of"@en, "säilyttäjänä kappaleelle"@fi, "oppbevarer av"@no, "وصي على"@ar, "dipositari de"@ca, "forvalter af"@da, "vastutav hoidja eksemplarile"@et, "letétkezelője a következőnek:"@hu, "despositario di"@it, "θεματοφύλακας του"@el, "dépositaire de"@fr, "Verwahrer von"@de .
+
+<http://registry.digitopia.nl/ribs#dancerOf>
+    owl:sameAs <http://rdaregistry.info/Elements/a/P50073> ;
+    rdfs:isDefinedBy <http://registry.digitopia.nl/ribs#> ;
+    rdfs:label "is dancer agent of"@en, "est un agent danseur de"@fr, "είναι χορευτής φορέας του"@el, "er agent, som er danser af"@da, "és agent ballarí de"@ca, "ist Akteur als Tänzerin/Tänzer von"@de, "táncos ágense a következőnek:"@hu, "tanssija (toimija) ekspressiossa"@fi, "er danser i (agent)"@no, "is danser-actor van"@nl, "هو وكيل راقص لـ"@ar, "tantsija (tegija) väljenduses"@et, "è danzatore agente di"@it, "ir dejotājs (aģents)"@lv ;
+    skos:definition "Relates an agent to an expression that includes a contribution by an agent of dancing in a musical or dramatic presentation."@en, "Met un agent en relation avec une expression qui intègre une contribution de la part d’un agent consistant à danser dans une présentation musicale ou dramatique."@fr, "Συνδέει έναν εκτελεστή, ο οποίος συνεισφέρει σε μια έκφραση ενός έργου μέσω του χορού σε μια μουσική, δραματική κ.λπ. παρουσίαση, με μια έκφραση."@el, "Setzt einen Akteur in Beziehung zu einer Expression, zu der ein Akteur beiträgt, indem er in einer musikalischen oder dramatischen Darbietung tanzt."@de, "Relaterer en agent til et udtryk, som omfatter en agents bidrag ved at danse i en musikalsk eller dramatisk præsentation."@da, "Relaciona un agent amb una expressió que inclou una contribució d’un agent dansant en una representació musical o dramàtica."@ca, "Liittää toimijan ekspressioon, jonka tekemiseen toimija osallistuu tanssimalla musiikki- tai näyttämöesityksessä."@fi, "Egy ágenst hozzákapcsol egy kifejezési formához, amely magában foglalja egy táncos ágens közreműködését egy zenei vagy drámai előadásban."@hu, "Relaterer en agent til et uttrykk som inkluderer et bidrag fra en agent i form av å danse i en musikalsk eller dramatisk forestilling."@no, "Relateert een actor aan een expressie die omvat een bijdrage van een actor door het dansen in een muziek- of dramapresentatie."@nl, "يربط وكيلا بتعبيرة تتضمن إسهام وكيل بالرقص في عرض موسيقي أو درامي."@ar, "Seostab tegija väljendusega, millesse tegija on andnud panuse, tantsides muusika- või draamaetenduses."@et, "Correla un agente a un'espressione che include un contributo da parte di un agente che danza in una presentazione musicale o teatrale."@it, "Sasaista aģentu ar izteiksmi, kas ietver aģenta ieguldījumu, dejojot muzikālā vai dramatiskā uzvedumā."@lv ;
+    a rdf:Property ;
+    rdfs:domain <http://registry.digitopia.nl/ribs#Agent> ;
+    rdfs:range <http://registry.digitopia.nl/ribs#Expression>;
+    rdfs:subPropertyOf <http://registry.digitopia.nl/ribs#performerOf>;
+    skos:altLabel "dancer of"@en, "tanssiesitys"@fi, "danser i "@no, "راقص"@ar, "ballarí de"@ca, "danser af"@da, "tantsija väljenduses"@et, "táncosa a következőnek:"@hu, "danzatore di"@it, "χορευτής του"@el, "danseur de"@fr, "Tänzer von"@de .
+    
